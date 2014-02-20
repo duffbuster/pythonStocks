@@ -1,0 +1,278 @@
+/*Style sheet for artistpatriciamurray.com*/
+/**************Generic tag specifications*********************/
+html {
+   height: 100%;
+}
+body {
+   font-family: "Times New Roman", serif;
+   font-size: 17px;
+   background-color: #FF9900;
+   color: #FFFFFF;
+}
+/* General header tags*/
+h1 {
+   font: arial, sans-serif;
+   font-size: 200%;
+   font-style: bold;
+}
+h2 {
+   font: arial, sans-serif;
+   font-size: 150%;
+   font-style: bold;
+}
+h3 {
+   font-size: 125%;
+}
+h4 {
+   font-size: 110%;
+}
+h5 {
+   font-size: 95%;
+}
+h6 {
+   font-size: 90%;
+   font-style: italic;
+}
+
+/**************** Site sections ******************/
+/** entire site content container**/
+#main-container {
+   height: 100%;
+   width: 1000px;
+   margin: 20px auto 0 auto;
+   padding: 0;
+   color: #333333;
+   background: #CDCDCD;
+   overflow: hidden;
+}
+/**** end main container ***/
+
+/** header of the site **/
+#header {
+   width: 1000px;
+   height: 90px;
+   color: #FFFFFF;
+   float: right;
+   text-align: right;
+   background: url("header_background.jpg") repeat;
+}
+#header h1 {
+   padding: 0;
+   margin: 15px 10px 0 0;
+}
+#header h5 {
+   padding: 0;
+   margin: 0 10px 0 0;
+}
+/**** end the header ****/
+
+/*** navigation bar ***/
+#navigation {
+   width: 100%;
+   height: 30px;
+   text-align: center;
+   margin: 0 auto 5px auto;
+   padding: 0;
+}
+ul#menu {
+   padding: 0;
+   margin: 0;
+}
+ul#menu li {
+   float: left;
+   padding: 0;
+   margin: 0;
+   list-style-type: none;
+   background: url("menu_gradient.jpg") repeat;
+}
+ul#menu li a {
+   font-size: 20px;
+   font-family: sans-serif;
+   text-align: center;
+   display: block;
+   float: left;
+   height: 28px;
+   text-decoration: none;
+   padding: 0;
+   margin: 0;
+   width: 333px;
+}
+#navigation a:link {
+   text-decoration: none;
+   color: #FFFFFF;
+}
+#navigation a:visited {
+   color: #CC33FF;
+   text-decoration: none;
+}
+#navigation a:hover {
+   text-decoration: underline;
+}
+/*** end navigation bar ***/
+
+/********* informational content **********/
+/**** About Patricia Page ***/
+#about {
+   width: 100%;
+   padding: 0;
+   margin: 0;
+   font-family: Tahoma, sans-serif;
+}
+#about a:link {
+   color: #9933FF;
+   text-decoration: none;
+}
+#about a:visited {
+   color: #666666;
+   text-decoration: none;
+}
+#about a:hover {
+   color: #CCCCCC;
+   text-decoration: underline;
+}
+#about .patricia {
+   width: 70%;
+   height: 250px;
+   float: left;
+   text-align: left;
+   margin: 8px 0 0 11px;
+   padding: 0;
+}
+#about .portrait{
+   width: 28%;
+   height: 250px;
+   float: right;
+   text-align: center;
+   vertical-align: middle;
+   margin: 8px 8px 0 0;
+   padding: 0;
+}
+#about .artwork {
+   width: 70%;
+   height: 250px;
+   float: right;
+   text-align: right;
+   margin: 10px 11px 0 0;
+   padding: 0;
+}
+#about .artexamp {
+   width: 28%;
+   height: 250px;
+   float: left;
+   text-align: center;
+   vertical-align: middle;
+   margin: 8px 0 0 8px;
+   padding: 0;
+}
+/*** end about page ***/
+
+/**************** Gallery information *************/
+#gallery {
+   width: 100%;
+   padding: 0;
+   margin: 0;
+}
+#gallery .display-case {
+   height: 400px;
+   width: 100%;
+   float: left;
+   padding: 0;
+   margin: 7px auto 0 auto;
+}
+#gallery .display-case img {
+   height: 350px;
+   width: 45%;
+   text-align: center;
+   vertical-align: middle;
+   display: block;
+   padding: 0;
+   margin: 5px auto;
+   border: #FFCC00 3px solid;
+}
+#gallery .display-case h6 {
+   margin: 2px auto;
+   font-size: 9px;
+   font-family: "Courier New";
+   text-align: center;
+}
+#gallery .showroom {
+   width: 100%;
+   float: left;
+   padding: 5px;
+   margin: 5px auto 0 auto;
+}
+#gallery .showroom table {
+   height: 100%;
+   width: 100%;
+   text-align: center;
+   display: block;
+   padding: 0;
+   margin: 5px auto;
+}
+#gallery .showroom table tr {
+   height: 125px;
+   width: 100%;
+   padding: 0;
+   margin: 10px auto;
+   text-align: center;
+   vertical-align: middle;
+}
+#gallery .showroom table td {
+   height: 110px;
+   width: 11%;
+   padding: 0;
+   margin: 4px;
+   text-align: center;
+   vertical-align: middle;
+}
+#gallery .showroom table td h6 {
+   margin: 2px 0;
+   padding: 0;
+   font-size: 10px;
+   font-family: "Courier New";
+   text-align: center;
+}
+#gallery .showroom table td img {
+   height: 100px;
+   width: 100px;
+   margin: 0;
+   border: #FFCC00 2px solid;   
+}
+/**** end gallery ****/
+/*************** Contact Us Section ********************/
+#contact {
+   width: 100%;
+   margin: 7px 5px 0 5px;
+   padding: 0;
+   font-size: 14px;
+}
+#contact form {
+   margin: 20px 50px 10px;
+   padding: 0;
+   font-family: "Tahoma", sans-serif;
+   font-size: 12px;
+}
+
+/**** end contact ****/
+
+/** footer **/
+#footer {
+   width: 1000px;
+   height: 3%;
+   margin: 3px auto 10px auto;
+   padding: 0;
+   text-align: center;
+   vertical-align: middle;
+   display: block;
+   background: url("menu_gradient.jpg") repeat;
+   overflow: hidden;
+}
+#footer p {
+   font-size: 10px;
+   font-family: "Courier New";
+   color: #FFFFFF;
+   text-align: center;
+   vertical-align: middle;
+   display: block;
+}  
+/*** end footer ***/
