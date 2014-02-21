@@ -118,6 +118,14 @@ ul#menu li a {
    margin: 0;
    font-family: Tahoma, sans-serif;
 }
+#about h2 {
+   padding: 3px 0 8px 5px;
+   margin: 0;
+}
+#about p {
+   padding: 4px 0 6px 7px;
+   margin: 0;
+}
 #about a:link {
    color: #9933FF;
    text-decoration: none;
@@ -130,39 +138,23 @@ ul#menu li a {
    color: #CCCCCC;
    text-decoration: underline;
 }
-#about .patricia {
-   width: 70%;
-   height: 250px;
-   float: left;
-   text-align: left;
-   margin: 8px 0 0 11px;
+#about table {
+   width: 80%;
    padding: 0;
-}
-#about .portrait{
-   width: 28%;
-   height: 250px;
-   float: right;
-   text-align: center;
+   margin: 0;
    vertical-align: middle;
-   margin: 8px 8px 0 0;
-   padding: 0;
-}
-#about .artwork {
-   width: 70%;
-   height: 250px;
-   float: right;
-   text-align: right;
-   margin: 10px 11px 0 0;
-   padding: 0;
-}
-#about .artexamp {
-   width: 28%;
-   height: 250px;
    float: left;
-   text-align: center;
-   vertical-align: middle;
-   margin: 8px 0 0 8px;
+}
+#about table tr {
    padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#about table td {
+   padding: 0;
+   margin: 0;
+   text-align: center;
+   font-size: 14px;
 }
 /*** end about page ***/
 

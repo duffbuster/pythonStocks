@@ -17,8 +17,27 @@
 		</ul>
 	</div>
 	<div id="about">
+		<h2> Stock information form </h2>
+		<p> Please use the form below to input your stock information: </p>
 		<form method="post" action="">
-		
+		<table>
+		<tr>
+		<td>Stock Ticker: </td>
+		<td><input type="text" maxlength="5" size="3" name="ticker" /></td>
+		</tr>
+		<tr>
+		<td> Number owned: </td>
+		<td> <input type="text" size="3" name="numOwned" /></td>
+		</tr>
+		<tr>
+		<td>Total Price: </td>
+		<td>Display total price here </td>
+		</tr>
+		<tr>
+		<td><input type="submit" name="submit" /></td>
+		<td></td>
+		</table>
+		</form>
 	</div>
 	</div>
 </body>

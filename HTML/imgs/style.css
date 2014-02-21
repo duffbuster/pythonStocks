@@ -118,6 +118,14 @@ ul#menu li a {
    margin: 0;
    font-family: Tahoma, sans-serif;
 }
+#about h2 {
+   padding: 6px 0 8px 5px;
+   margin: 0;
+}
+#about p {
+   padding: 4px 0 6px 7px;
+   margin: 0;
+}
 #about a:link {
    color: #9933FF;
    text-decoration: none;
