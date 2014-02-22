@@ -1,7 +1,7 @@
 Stockify
 ============
 
-A quick and dirty python api for storing stocks.
+Stockify is a quick and dirty python api for storing stocks.
 
 Created by Colin Mackey, Kevin Murphy, Chad Schmidt, and Peter Moerman
 for Computer Science 350 at the University of Mary Washington
