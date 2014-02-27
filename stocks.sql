@@ -4,7 +4,7 @@ GRANT ALL PRIVILEGES ON stockTickers.* to 'user'@'localhost'
 identified by 'password';
 USE stockTickers;
 
---Set up initial user table structure
+/* Set up initial user table structure */
 
 CREATE TABLE users
 (
