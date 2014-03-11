@@ -14,7 +14,7 @@ def report2():
   
   db = utils.db_connect()
   cur = db.cursor(cursorclass=stockdb.cursors.DictCursor)
-  query = "INSERT INTO stockdb (firstname, lastname, stockname,stockinfo)
+  query = "INSERT INTO stockdb (firstname, lastname, stockname,stockinfo)"
   cur.execute(query)
   db.commit()
   
