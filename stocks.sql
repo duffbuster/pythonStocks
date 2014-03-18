@@ -7,8 +7,7 @@ USE stockTickers;
 
 CREATE TABLE users
 (
-  firstName VARCHAR(256),
-  lastName VARCHAR(256),
+  user_id NOT NULL AUTOINCREMENT,
   username VARCHAR(256),
   password VARCHAR(256),
   PRIMARY KEY (username)
