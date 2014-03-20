@@ -1,4 +1,4 @@
-from flask import Flask, session, render_template, request, redirect, url_for, 
+from flask import Flask, session, render_template, request, redirect, url_for 
 
 import utils, stockTickers, ystockquote
 app = Flask(__name__)
@@ -13,6 +13,8 @@ def mainIndex():
     
     return render_template('index.html', selectedMenu='Home', stockPrice=stockPrice)
 
+# TODO: addStock route
+
 # Stockreport only shows stuff it you're logged in
 # If not logged in displays message
 @app.route('/stockReport', methods=['GET'])
@@ -25,8 +27,9 @@ def stockReport():
         # update stocks then...
             # to update, get array of tickers and use a for loop to iterate through and update the price of each one
         # display stocks
+	print "hello"
     else:
-        # return to home
+	# return to home
         return redirect(url_for('mainIndex'))
     
     return redirect(url_for('stocklist'))                                          
