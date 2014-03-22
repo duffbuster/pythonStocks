@@ -95,7 +95,7 @@ ul#menu li a {
    text-decoration: none;
    padding: 0;
    margin: 0;
-   width: 500px;
+   width: 333px;
 }
 #navigation a:link {
    text-decoration: none;
@@ -119,11 +119,11 @@ ul#menu li a {
    font-family: Tahoma, sans-serif;
 }
 #about h2 {
-   padding: 6px 0 8px 5px;
+   padding: 8px 5px 8px 8px;
    margin: 0;
 }
 #about p {
-   padding: 4px 0 6px 7px;
+   padding: 8px 5px 8px 12px;
    margin: 0;
 }
 #about a:link {
@@ -155,6 +155,12 @@ ul#menu li a {
    margin: 0;
    text-align: center;
    font-size: 14px;
+}
+#about form {
+	padding: 0;
+	margin: 8px 8px 12px 20px;
+	text-align: left;
+	font-size: 15px;
 }
 /*** end about page ***/
 
