@@ -1,6 +1,6 @@
 from flask import Flask, session, render_template, request, redirect, url_for 
 
-import utils, stockTickers, ystockquote
+import utils
 app = Flask(__name__)
 
 app.secret_key = 'Zq4oA4Dqq3'
@@ -27,7 +27,11 @@ def stockReport():
         # update stocks then...
             # to update, get array of tickers and use a for loop to iterate through and update the price of each one
         # display stocks
-	print "hello"
+	displayQuery = "SELECT u.username Username, s.symbol Symbol, s.name Name, s.price Price, o.amount 'Number Owned', (s.price * o.amount) 'Total Price' FROM users u JOIN owners o JOIN stocks s ON u.user_id = o.user_id AND o.stock_id = s.stock_id WHERE u.username = '%s'; " % (session['username'])
+	cur.execute(displayQuery)
+	print displayQuery
+	rows = cur.fetchall()
+	return render_template('stockReport.html', selectedMenu='stockReport', username = session['username'], rows=rows)
     else:
 	# return to home
         return redirect(url_for('mainIndex'))
