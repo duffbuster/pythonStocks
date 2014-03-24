@@ -1,0 +1,26 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+        <!-- insert the page content here -->
+        <h1>New User</h1>
+        <form method="post" action="/newUser">
+    <p>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" size="40" ></p>
+    <p>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="pw" size="40" /></p>
+    <p>
+    <label for="zip">Zip Code:</label>
+    <input type="zip" id="zip" name="zip" size="40" /></p>
+
+    <p><input type="submit" value="submit" name="submit" /></p>
+  </form>
+        
+        
+ 
+        
+{% endblock %}
