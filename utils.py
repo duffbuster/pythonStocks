@@ -1,5 +1,5 @@
 # utils.py
-import stocks
+import MySQLdb 
 
 
 DATABASE='stockTickers'
@@ -8,4 +8,4 @@ DB_PASSWORD = 'password'
 HOST = 'localhost'
 
 def db_connect():
-  return stocks.connect(HOST, DB_USER, DB_PASSWORD, DATABASE)
+  return MYSQLdb.connect(HOST, DB_USER, DB_PASSWORD, DATABASE)
