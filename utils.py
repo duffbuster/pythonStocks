@@ -8,4 +8,4 @@ DB_PASSWORD = 'password'
 HOST = 'localhost'
 
 def db_connect():
-  return MYSQLdb.connect(HOST, DB_USER, DB_PASSWORD, DATABASE)
+  return MySQLdb.connect(HOST, DB_USER, DB_PASSWORD, DATABASE)
