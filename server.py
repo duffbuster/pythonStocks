@@ -5,13 +5,17 @@ app = Flask(__name__)
 
 app.secret_key = 'Zq4oA4Dqq3'
 
+#TODO: variables: username, symbol, price, error
+
+#TODO: check that password is same on new user
+
 # Homepage: search for stocks and get current price
 @app.route('/', methods=['GET', 'POST'])
 def mainIndex():
-    ticker = request.form['symbol']
-    stockPrice = ystockquote.get_price(ticker)
+    #ticker = request.form['symbol']
+    #stockPrice = ystockquote.get_price(ticker)
     
-    return render_template('index.html', selectedMenu='Home', stockPrice=stockPrice)
+    return render_template('index.html', selectedMenu='Home')
 
 # TODO: addStock route
 
