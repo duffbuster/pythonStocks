@@ -1,0 +1,23 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+        <!-- insert the page content here -->
+  <h1>Logout</h1>
+
+{% if error %}
+  <h1><strong>Error: </strong> {{ error }}</h1>
+{% endif %}
+
+  <form method="post" action="/logout">
+    <p>
+      <input type="submit" value="logout" name="submit" />
+    </p>
+  </form>
+        
+        
+ 
+        
+{% endblock %}

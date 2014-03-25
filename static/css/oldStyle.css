@@ -95,8 +95,8 @@ ol li
 #logo
 { width: 825px;
   position: relative;
-  height: 168px;
-  background: #8B0073 url(../img/logo.png) no-repeat;}
+  height: 120px;
+  background: #8B0073 url({{ url_for('static', filename='/img/logo.png') }}) no-repeat;}
 
 #logo #logo_text 
 { position: absolute; 
@@ -127,7 +127,7 @@ ol li
 { width: 877px;
   height: 72px;
   padding: 0;
-  background: #5B2660 url(http://rosemary.umw.edu/~raz/img/menu.png ) repeat-x;} 
+  background: #5B2660 url({{ url_for('static', filename='img/menu.png') }}) repeat-x;} 
 
 ul#menu, ul#menu li
 { float: left;
@@ -152,14 +152,11 @@ ul#menu li a
 
 ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 { color: #FFF;
-  background: #3F1B41 url(http://rosemary.umw.edu/~raz/img/menu_select.png) repeat-x;}
-
-#site_content
-{ width: 837px;
+  background: #3F1B41 url({{ url_for('static', filename='img/menu_select.png') }}) repeat-x;} 
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 20px 24px 20px 37px;
-  background: #FFF url(http://rosemary.umw.edu/~raz/img/content.png) repeat-y;} 
+  background: #FFF url(content.png) repeat-y;} 
 
 .sidebar
 { float: right;
@@ -178,7 +175,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 .sidebar li a, .sidebar li a:hover
 { padding: 0 0 0 40px;
   display: block;
-  background: transparent url(http://rosemary.umw.edu/~raz/img/link.png) no-repeat left center;} 
+  background: transparent url(link.png) no-repeat left center;} 
 
 .sidebar li a.selected
 { color: #444;
@@ -194,7 +191,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 
 #content ul li
 { list-style-type: none;
-  background: url(http://rosemary.umw.edu/~raz/img/bullet.png) no-repeat;
+  background: url(bullet.png) no-repeat;
   margin: 0 0 6px 0; 
   padding: 0 0 4px 25px;
   line-height: 1.5em;}
@@ -205,7 +202,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   height: 33px;
   padding: 24px 0 5px 0;
   text-align: center; 
-  background: #29425E url(http://rosemary.umw.edu/~raz/img/footer.png) repeat-x;
+  background: #29425E url(footer.png) repeat-x;
   color: #FFF;
   text-transform: uppercase;
   letter-spacing: 0.1em;}
