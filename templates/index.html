@@ -5,30 +5,18 @@
 
 
         <!-- insert the page content here -->
-        <h1>Search</h1>
-        <p>For example, you can type 'movies', 'coffee', 'Mexican', or the name of a store like 'Starbucks</p>
+        <h1>Stock Search</h1>
+        <p>Enter a stock symbol. For example 'GOOG' or 'APPL'</p>
         <form method="post" action="/">
     <label for="username">Search:</label>
     <input type="text" id="search" name="search" size="40" />
     <input type="submit" value="go" name="submit" />
   </form>
-  {% if queryType=='stores' %}
-         <table>
-         <tr><th>Name</th><th>Type</th><th>Address</th><th>City</th></tr>
-        {% for result in results %}
-        <tr><td>{{result['name']}}</td><td>{{result['type']}}</td><td>{{result['address']}}</td><td>{{result['city']}}</td></tr>
-        {% endfor %}
-         </table>
-        
-        
-  {% endif %}
 
-   {% if queryType=='movies' %}
+  {% if queryType=='stock' %}
          <table>
-         <tr><th>Movie</th><th>Theater</th><th>Zip</th></tr>
-        {% for result in results %}
-        <tr><td>{{result['movie']}}</td><td>{{result['theater']}}</td><td>{{result['zip']}}</td></tr>
-        {% endfor %}
+         <tr><th>Symbol</th><th>Price</th>
+        <tr><td>{{symbol}}</td><td>{{price}}</td>
          </table>
         
         
