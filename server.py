@@ -1,6 +1,6 @@
 from flask import Flask, session, render_template, request, redirect, url_for 
 
-import utils
+import utils, MySQLdb
 app = Flask(__name__)
 
 app.secret_key = 'Zq4oA4Dqq3'
@@ -16,6 +16,8 @@ def mainIndex():
 	ticker = request.form['search']
     	#stockPrice = ystockquote.get_price(ticker)
     	return render_template('index.html', selectedMenu='Home', price=stockPrice, symbol=ticker)
+    if 'username' in session:
+	return render_template('index.html', selectedMenu='Home', username=session['username'])
     return render_template('index.html', selectedMenu='Home')
 
 # TODO: addStock route
@@ -53,7 +55,8 @@ def login():
         loginUser = request.form['username']
         pw = request.form['password']
         query = "SELECT * FROM users WHERE username = '%s' AND password = SHA2('%s', 0)" % (loginUser, pw)
-        cur.execute(query)
+        print query
+	cur.execute(query)
         
         if cur.fetchone():
             session['username'] = loginUser
@@ -61,7 +64,8 @@ def login():
             return redirect(url_for('mainIndex'))
         else:
             error = 'Username and password do not match!'
-        
+	    print error
+	    return render_template('login.html', selectedMenu='Login', error=error)
     if 'username' in session:
 	return render_template('login.html', selectedMenu='Login', username=session['username'])
     return render_template('login.html', selectedMenu='Login')
