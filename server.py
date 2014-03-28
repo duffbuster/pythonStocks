@@ -62,9 +62,9 @@ def login():
         else:
             error = 'Username and password do not match!'
         
-        if 'username' in session:
-            return render_template('login.html', selectedMenu='Login', username=session['username'])
-        return render_template('login.html', selectedMenu='Login')
+    if 'username' in session:
+	return render_template('login.html', selectedMenu='Login', username=session['username'])
+    return render_template('login.html', selectedMenu='Login')
 
 @app.route('/newUser', methods=['GET', 'POST'])
 def newUser():
