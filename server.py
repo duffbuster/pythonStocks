@@ -43,7 +43,7 @@ def stockReport():
 	    numOwned = request.form['numOwned']
 	    #make yql call for price/name
 	    #stockPrice = ystockquote.get_price(symbol)
-	    queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" stockPrice "');"
+	    queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" + stockPrice + "');"
 	    print queryA
 	    queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '" + session['username'] + "'), (SELECT stock_id FROM stocks WERE symbol = '" + symbol + "'), '" + numOwned + "');"
 	    print queryB
