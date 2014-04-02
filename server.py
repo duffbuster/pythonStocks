@@ -36,6 +36,21 @@ def stockReport():
 	cur.execute(displayQuery)
 	print displayQuery
 	rows = cur.fetchall()
+	if request.method == 'POST':
+	    print "Adding a new stock to the database..."
+	    symbol = request.form['symbol']
+	    name = request.form['name']
+	    numOwned = request.form['numOwned']
+	    #make yql call for price/name
+	    #stockPrice = ystockquote.get_price(symbol)
+	    queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" stockPrice "');"
+	    print queryA
+	    queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '" + session['username'] + "'), (SELECT stock_id FROM stocks WERE symbol = '" + symbol + "'), '" + numOwned + "');"
+	    print queryB
+	    cur.execute(queryA)
+	    db.commit()
+	    cur.execute(queryB)
+	    db.commit()
 	return render_template('stockReport.html', selectedMenu='stockReport', username = session['username'], rows=rows)
     else:
 	# return to home
