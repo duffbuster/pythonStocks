@@ -103,7 +103,7 @@ def newUser():
     
     if 'username' in session:
         return render_template('newUser.html', selectedMenu='New User', username=session['username'])
-    return render_templage('newUser.html', selectedMenu='New User')
+    return render_template('newUser.html', selectedMenu='New User')
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
