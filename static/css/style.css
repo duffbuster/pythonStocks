@@ -7,8 +7,8 @@ html
 
 body
 { font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #F0EFE2;
-  color: #777;}
+  background: #999999;
+  color: #006600;}
 
 p
 { padding: 0 0 20px 0;
@@ -19,32 +19,32 @@ img
 
 h1, h2, h3, h4, h5, h6 
 { font: normal 175% 'century gothic', arial, sans-serif;
-  color: #43423F;
+  color: #006600;
   margin: 0 0 15px 0;
   padding: 15px 0 5px 0;}
 
 h2
 { font: normal 175% 'century gothic', arial, sans-serif;
-  color: #1293EE;}
+  color: #006600;}
 
 h4, h5, h6
 { margin: 0;
   padding: 0 0 5px 0;
   font: normal 120% arial, sans-serif;
-  color: #1293EE;}
+  color: #006600;}
 
 h5, h6
 { font: italic 95% arial, sans-serif;
   padding: 0 0 15px 0;
-  color: #000;}
+  color: #006600;}
 
 h6
-{ color: #362C20;}
+{ color: #006600;}
 
 a, a:hover
 { outline: none;
   text-decoration: underline;
-  color: #F05A00;}
+  color: #33CC33;}
 
 a:hover
 { text-decoration: none;}
@@ -67,8 +67,8 @@ a:hover
 blockquote
 { margin: 20px 0; 
   padding: 10px 20px 0 20px;
-  border: 1px solid #E5E5DB;
-  background: #FFF;}
+  border: 1px solid #666666;
+  background: #999999;}
 
 ul
 { margin: 2px 0 22px 17px;}
@@ -89,14 +89,14 @@ ol li
   margin-right: auto;}
 
 #header
-{ background: #F79F00;
+{ background: #333333;
   height: 240px;}
 
 #logo
 { width: 825px;
   position: relative;
   height: 168px;
-  background: #8B0073 url(../img/logo.png) no-repeat;}
+  background: #333333}
 
 #logo #logo_text 
 { position: absolute; 
@@ -111,23 +111,23 @@ ol li
 
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
 { padding: 22px 0 0 0;
-  color: #FFF;
+  color: #FFFFFF;
   letter-spacing: 0.1em;
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
-{ color: #F05A00;}
+{ color: #006600;}
 
 #logo_text h2
 { font-size: 100%;
   padding: 4px 0 0 0;
-  color: #FFF;}
+  color: #FFFFFF;}
 
 #menubar
 { width: 877px;
   height: 72px;
   padding: 0;
-  background: #5B2660 url(http://rosemary.umw.edu/~raz/img/menu.png ) repeat-x;} 
+  background: #999999;} 
 
 ul#menu, ul#menu li
 { float: left;
@@ -145,21 +145,21 @@ ul#menu li a
   height: 37px;
   padding: 29px 26px 6px 26px;
   text-align: center;
-  color: #FFF;
+  color: #006600;
   text-transform: uppercase;
   text-decoration: none;
   background: transparent;} 
 
 ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
-{ color: #FFF;
-  background: #3F1B41 url(http://rosemary.umw.edu/~raz/img/menu_select.png) repeat-x;}
+{ color: #33CC33;
+  background: #666666;}
 
 #site_content
 { width: 837px;
   overflow: hidden;
   margin: 0 auto 0 auto;
-  padding: 20px 24px 20px 37px;
-  background: #FFF url(http://rosemary.umw.edu/~raz/img/content.png) repeat-y;} 
+  padding: 20px 20px 20px 20px;
+  background: #CCCCCC;} 
 
 .sidebar
 { float: right;
@@ -181,7 +181,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   background: transparent url(http://rosemary.umw.edu/~raz/img/link.png) no-repeat left center;} 
 
 .sidebar li a.selected
-{ color: #444;
+{ color: #333333;
   text-decoration: none;} 
 
 #content
@@ -205,21 +205,21 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   height: 33px;
   padding: 24px 0 5px 0;
   text-align: center; 
-  background: #29425E url(http://rosemary.umw.edu/~raz/img/footer.png) repeat-x;
-  color: #FFF;
+  background: #333333;
+  color: #FFFFFF;
   text-transform: uppercase;
   letter-spacing: 0.1em;}
 
 #footer a
-{ color: #FFF;
+{ color: #AAAAAA;
   text-decoration: none;}
 
 #footer a:hover
-{ color: #FFF;
+{ color: #666666;
   text-decoration: underline;}
 
 .search
-{ color: #5D5D5D; 
+{ color: #006600; 
   border: 1px solid #BBB; 
   width: 134px; 
   padding: 4px; 
@@ -246,8 +246,8 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   width: 299px; 
   font: 100% arial; 
   border: 1px solid #E5E5DB; 
-  background: #FFF; 
-  color: #47433F;}
+  background: #666666; 
+  color: #006600;}
   
 .form_settings .submit
 { font: 100% arial; 
@@ -257,8 +257,8 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   height: 33px;
   padding: 2px 0 3px 0;
   cursor: pointer; 
-  background: #F05A00; 
-  color: #FFF;}
+  background: #666666; 
+  color: #006600;}
 
 .form_settings textarea, .form_settings select
 { font: 100% arial; 
@@ -285,12 +285,12 @@ table
 { margin: 10px 0 30px 0;}
 
 table tr th, table tr td
-{ background: #3B3B3B;
-  color: #FFF;
+{ background: #444444;
+  color: #006600;
   padding: 7px 4px;
   text-align: left;}
   
 table tr td
-{ background: #F0EFE2;
-  color: #47433F;
+{ background: #444444;
+  color: #006600;
   border-top: 1px solid #FFF;}
