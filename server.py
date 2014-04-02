@@ -83,6 +83,7 @@ def newUser():
         query = "SELECT * FROM users WHERE username = '%s' AND password = SHA2('%s', 0)" % (session['username'], newPw)
         print newQuery
         cur.execute(newQuery)
+        db.commit()
         cur.execute(query)
         if cur.fetchone():
             return redirect(url_for('mainIndex'))
