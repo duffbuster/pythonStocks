@@ -22,7 +22,7 @@ def mainIndex():
 
 # Stockreport only shows stuff it you're logged in
 # If not logged in displays message
-@app.route('/stockReport', methods=['GET'])
+@app.route('/stockReport', methods=['GET', 'POST'])
 def stockReport():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
