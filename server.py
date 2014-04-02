@@ -1,6 +1,6 @@
 from flask import Flask, session, render_template, request, redirect, url_for 
 
-import utils, MySQLdb
+import utils, MySQLdb, ystockquote
 app = Flask(__name__)
 
 app.secret_key = 'Zq4oA4Dqq3'
@@ -13,7 +13,7 @@ app.secret_key = 'Zq4oA4Dqq3'
 def mainIndex():
     if request.method == 'POST':
 	ticker = request.form['search']
-    	#stockPrice = ystockquote.get_price(ticker)
+    	stockPrice = ystockquote.get_price(ticker)
     	return render_template('index.html', selectedMenu='Home', price=stockPrice, symbol=ticker)
     if 'username' in session:
 	return render_template('index.html', selectedMenu='Home', username=session['username'])
@@ -42,14 +42,30 @@ def stockReport():
 	    symbol = request.form['symbol']
 	    name = request.form['name']
 	    numOwned = request.form['numOwned']
-	    #make yql call for price/name
-	    #stockPrice = ystockquote.get_price(symbol)
-	    queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" + stockPrice + "');"
-	    print queryA
-	    queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '" + session['username'] + "'), (SELECT stock_id FROM stocks WERE symbol = '" + symbol + "'), '" + numOwned + "');"
+	    #make yql call for price
+	    stockPrice = ystockquote.get_price(symbol)
+	    
+	    query = "SELECT * FROM stocks WHERE symbol = '%s';" % (symbol)
+	    cur.execute(query)
+	    print query
+	    if not cur.fetchone():
+		print "Hello World"
+	    	queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" + stockPrice + "');"
+		cur.execute(queryA)
+		db.commit()
+		print queryA
+	    
+            idquery = "SELECT stock_id FROM stocks WHERE symbol = '%s';" % (symbol)
+	    cur.execute(idquery)
+	    print idquery
+	    data = cur.fetchall()
+	    stockid = ''
+	    for row in data:
+		stockid = row['stock_id']
+	    print stockid
+	    #queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '" + session['username'] + "'), " + stockid + ", " + numOwned + ");"
+	    queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '%s'), %s, %s);" % (session['username'], stockid, numOwned)
 	    print queryB
-	    cur.execute(queryA)
-	    db.commit()
 	    cur.execute(queryB)
 	    db.commit()
 	return render_template('stockReport.html', selectedMenu='stockReport', username = session['username'], rows=rows)
