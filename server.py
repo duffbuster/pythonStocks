@@ -14,7 +14,7 @@ def mainIndex():
     if request.method == 'POST':
 	ticker = request.form['search']
     	stockPrice = ystockquote.get_price(ticker)
-    	return render_template('index.html', selectedMenu='Home', price=stockPrice, symbol=ticker)
+    	return render_template('index.html', selectedMenu='Home', price=stockPrice, symbol=ticker, queryType='stock')
     if 'username' in session:
 	return render_template('index.html', selectedMenu='Home', username=session['username'])
     return render_template('index.html', selectedMenu='Home')
@@ -33,10 +33,11 @@ def stockReport():
         # update stocks then...
             # to update, get array of tickers and use a for loop to iterate through and update the price of each one
         # display stocks
-	displayQuery = "SELECT u.username Username, s.symbol Symbol, s.name Name, s.price Price, o.amount 'Number Owned', (s.price * o.amount) 'Total Price' FROM users u JOIN owners o JOIN stocks s ON u.user_id = o.user_id AND o.stock_id = s.stock_id WHERE u.username = '%s'; " % (session['username'])
+	displayQuery = "SELECT s.symbol symbol, s.name name, s.price price, o.amount amount, (s.price * o.amount) total FROM users u JOIN owners o JOIN stocks s ON u.user_id = o.user_id AND o.stock_id = s.stock_id WHERE u.username = '%s'; " % (session['username'])
 	cur.execute(displayQuery)
 	print displayQuery
 	rows = cur.fetchall()
+	print rows
 	if request.method == 'POST':
 	    print "Adding a new stock to the database..."
 	    symbol = request.form['symbol']

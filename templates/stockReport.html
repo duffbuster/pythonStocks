@@ -11,8 +11,15 @@
   <h1><strong>Error: </strong> {{ error }}</h1>
 {% endif %}
 
+<h1>Stocks</h1>
+<table>
+	<tr><th>Symbol</th><th>Name</th><th>Price</th><th>Number Owned</th><th>Total Price</th></tr>
+	{% for row in rows %}
+		<tr><td>{{row['symbol']}}</td><td>{{row['name']}}</td><td>{{row['price']}}</td><td>{{row['amount']}}</td><td>{{row['total']}}</td></tr>
+	{% endfor %}
+</table>
 
-
+<h1>Add a New Stock</h1>
   <form method="post" action="/stockReport">
     <p>
       <label for="symbol">Stock Symbol:</label>
