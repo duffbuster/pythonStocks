@@ -6,6 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'Zq4oA4Dqq3'
 
 #TODO: variables: username, symbol, price, error
+#TODO: get ystockquote working
 
 # Homepage: search for stocks and get current price
 @app.route('/', methods=['GET', 'POST'])
