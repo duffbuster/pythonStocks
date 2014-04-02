@@ -1,27 +1,29 @@
 from flask import Flask, session, render_template, request, redirect, url_for 
 
-import utils
+import utils, MySQLdb
 app = Flask(__name__)
 
 app.secret_key = 'Zq4oA4Dqq3'
 
 #TODO: variables: username, symbol, price, error
-
-#TODO: check that password is same on new user
+#TODO: get ystockquote working
 
 # Homepage: search for stocks and get current price
 @app.route('/', methods=['GET', 'POST'])
 def mainIndex():
-    #ticker = request.form['symbol']
-    #stockPrice = ystockquote.get_price(ticker)
-    
+    if request.method == 'POST':
+	ticker = request.form['search']
+    	#stockPrice = ystockquote.get_price(ticker)
+    	return render_template('index.html', selectedMenu='Home', price=stockPrice, symbol=ticker)
+    if 'username' in session:
+	return render_template('index.html', selectedMenu='Home', username=session['username'])
     return render_template('index.html', selectedMenu='Home')
 
-# TODO: addStock route
+#TODO: get table showing on stockReport page (for loop in stockReport.html)
 
 # Stockreport only shows stuff it you're logged in
 # If not logged in displays message
-@app.route('/stockReport', methods=['GET'])
+@app.route('/stockReport', methods=['GET', 'POST'])
 def stockReport():
     db = utils.db_connect()
     cur = db.cursor(cursorclass=MySQLdb.cursors.DictCursor)
@@ -35,12 +37,27 @@ def stockReport():
 	cur.execute(displayQuery)
 	print displayQuery
 	rows = cur.fetchall()
+	if request.method == 'POST':
+	    print "Adding a new stock to the database..."
+	    symbol = request.form['symbol']
+	    name = request.form['name']
+	    numOwned = request.form['numOwned']
+	    #make yql call for price/name
+	    #stockPrice = ystockquote.get_price(symbol)
+	    queryA = "INSERT INTO stocks (symbol, name, price) VALUES('" + symbol + "', '" + name + "', '" + stockPrice + "');"
+	    print queryA
+	    queryB = "INSERT INTO owners VALUES((SELECT user_id FROM users WHERE username = '" + session['username'] + "'), (SELECT stock_id FROM stocks WERE symbol = '" + symbol + "'), '" + numOwned + "');"
+	    print queryB
+	    cur.execute(queryA)
+	    db.commit()
+	    cur.execute(queryB)
+	    db.commit()
 	return render_template('stockReport.html', selectedMenu='stockReport', username = session['username'], rows=rows)
     else:
 	# return to home
         return redirect(url_for('mainIndex'))
     
-    return redirect(url_for('stocklist'))                                          
+    return redirect(url_for('mainIndex'))                                          
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -52,7 +69,8 @@ def login():
         loginUser = request.form['username']
         pw = request.form['password']
         query = "SELECT * FROM users WHERE username = '%s' AND password = SHA2('%s', 0)" % (loginUser, pw)
-        cur.execute(query)
+        print query
+	cur.execute(query)
         
         if cur.fetchone():
             session['username'] = loginUser
@@ -60,10 +78,11 @@ def login():
             return redirect(url_for('mainIndex'))
         else:
             error = 'Username and password do not match!'
-        
-        if 'username' in session:
-            return render_template('login.html', selectedMenu='Login', username=session['username'])
-        return render_template('login.html', selectedMenu='Login')
+	    print error
+	    return render_template('login.html', selectedMenu='Login', error=error)
+    if 'username' in session:
+	return render_template('login.html', selectedMenu='Login', username=session['username'])
+    return render_template('login.html', selectedMenu='Login')
 
 @app.route('/newUser', methods=['GET', 'POST'])
 def newUser():
@@ -78,13 +97,14 @@ def newUser():
         query = "SELECT * FROM users WHERE username = '%s' AND password = SHA2('%s', 0)" % (session['username'], newPw)
         print newQuery
         cur.execute(newQuery)
+        db.commit()
         cur.execute(query)
         if cur.fetchone():
             return redirect(url_for('mainIndex'))
     
     if 'username' in session:
         return render_template('newUser.html', selectedMenu='New User', username=session['username'])
-    return render_templage('newUser.html', selectedMenu='New User')
+    return render_template('newUser.html', selectedMenu='New User')
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():

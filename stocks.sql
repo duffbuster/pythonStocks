@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS stockTickers;
 CREATE DATABASE IF NOT EXISTS stockTickers;
-GRANT ALL PRIVILEGES ON stockTickers.users to 'user'@'localhost' 
+GRANT ALL PRIVILEGES ON stockTickers.* to 'user'@'localhost' 
 identified by 'password';
 USE stockTickers;
 
