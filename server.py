@@ -7,8 +7,6 @@ app.secret_key = 'Zq4oA4Dqq3'
 
 #TODO: variables: username, symbol, price, error
 
-#TODO: check that password is same on new user
-
 # Homepage: search for stocks and get current price
 @app.route('/', methods=['GET', 'POST'])
 def mainIndex():
@@ -20,7 +18,7 @@ def mainIndex():
 	return render_template('index.html', selectedMenu='Home', username=session['username'])
     return render_template('index.html', selectedMenu='Home')
 
-# TODO: addStock route
+# TODO: form to add a new stock in stockReport
 
 # Stockreport only shows stuff it you're logged in
 # If not logged in displays message
@@ -43,7 +41,7 @@ def stockReport():
 	# return to home
         return redirect(url_for('mainIndex'))
     
-    return redirect(url_for('stocklist'))                                          
+    return redirect(url_for('mainIndex'))                                          
 
 
 @app.route('/login', methods=['GET', 'POST'])
