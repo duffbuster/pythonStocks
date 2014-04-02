@@ -19,7 +19,7 @@ def mainIndex():
 	return render_template('index.html', selectedMenu='Home', username=session['username'])
     return render_template('index.html', selectedMenu='Home')
 
-# TODO: form to add a new stock in stockReport
+#TODO: get table showing on stockReport page (for loop in stockReport.html)
 
 # Stockreport only shows stuff it you're logged in
 # If not logged in displays message
